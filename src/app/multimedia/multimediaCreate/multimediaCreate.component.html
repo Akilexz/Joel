@@ -1,0 +1,61 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <h4 class="card-title">Publicaciones</h4>
+                <div class="row">
+                    <div class="col-12">
+                        <button mat-raised-button class="btn btn-round btn-sm pull-right">
+                            <i class="material-icons">add</i>
+                            <a href="/publicaciones/publicacionesList" title="Listo">Listo</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div id="typography">
+                    <div class="row">
+                        <div class="col-6">
+                                <textarea rows="5" cols="100" class="form-control " pInputTextarea pInputTextarea >
+                                    <input type="file" name="photo" ng2FileSelect [uploader]= "uploader" />
+                                </textarea>
+                                    
+                                    <div class="custom-file">
+                                            <input type="file" class="custom-file-label" id="customFileLang" lang="es">
+                                            <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
+                                          </div>
+                                    
+                                   
+                                    <button type="file" name="uploadedfile" class="btn btn-success btn-s"
+                                    tipe="file" 
+                                      (click)="uploader.uploadAll()" 
+                                      [disabled]="!uploader.getNotUploadedItems().length" >
+                                          upload an Image
+                                    </button>
+                                
+                                
+                        </div>
+                    </div>
+                </div>                 
+                        <div class="col-6">
+                            <p-calendar [(ngModel)]= 'date' [inline]="true"></p-calendar>
+                        </div>
+                        <table class="table">
+                        <th>Id</th>
+                        <th>Nombre del destino</th>
+
+                        <tr *ngFor="let destinos of destinos">
+
+                            <td>{{destinos.Id}}
+                            </td>
+                            <td>{{destinos.Nombre}}
+                            </td>
+
+                        </tr>
+                    </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+                                
